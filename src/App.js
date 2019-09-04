@@ -3,10 +3,10 @@ import './App.css';
 import {useSelector,useDispatch} from 'react-redux';
 import {increment,decrement} from './actions/index';
 
-
 function App() {
-  const counter = useSelector(state => state.counter);
+  const counter = useSelector(function (state) {return state.counter});
   const isLogged = useSelector(state => state.isLogged);
+  //useSelector can choose every value from the global state, so can choose the value of counter and isLogged.
   const dispatch = useDispatch();
   return (
     <div className="App">
